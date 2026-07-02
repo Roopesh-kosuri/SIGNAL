@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   SIGNAL Design System — CSS Custom Properties Theme Engine
+   ═══════════════════════════════════════════════════════════════
+   ALL colors are defined here as CSS variables.
+   Tailwind utility classes (bg-primary, text-on-surface, etc.)
+   reference var(--color-*) from tailwind.config.js, so changing
+   the data-theme attribute on <html> updates every color everywhere.
+
+   Themes: dark (default) | light | blue | system (resolved by JS)
+═══════════════════════════════════════════════════════════════ */
+
+/* ── GLOBAL TIMING & MOTION ───────────────────────────────────── */
+:root {
+  --duration-micro: 150ms;
+  --ease-micro: ease-out;
+  --duration-component: 250ms;
+  --ease-component: ease-in-out;
+  --duration-page: 300ms;
+  --ease-page: ease-out;
+  --duration-skeleton: 300ms;
+  --duration-content: 200ms;
+  --transition-micro: var(--duration-micro) var(--ease-micro);
+  --transition-component: var(--duration-component) var(--ease-component);
+  --transition-page: var(--duration-page) var(--ease-page);
+}
+
+/* ── DARK THEME — warm near-black, amber-gold accent ──────────── */
+:root,
+[data-theme="dark"] {
+  --color-surface:                  #151310;
+  --color-surface-dim:              #151310;
+  --color-surface-bright:           #3c3935;
+  --color-surface-container-lowest: #100e0b;
+  --color-surface-container-low:    #1e1b18;
+  --color-surface-container:        #221f1c;
+  --color-surface-container-high:   #2c2a26;
+  --color-surface-container-highest:#373430;
+  --color-on-surface:               #e8e1db;
+  --color-on-surface-variant:       #cfc5b7;
+  --color-inverse-surface:          #e8e1db;
+  --color-inverse-on-surface:       #33302c;
+  --color-outline:                  #988f82;
+  --color-outline-variant:          #4d463b;
+  --color-surface-tint:             #dfc391;
+  --color-primary:                  #dfc391;
+  --color-on-primary:               #3e2e08;
+  --color-primary-container:        #c2a878;
+  --color-on-primary-container:     #4f3d17;
+  --color-inverse-primary:          #705b32;
+  --color-secondary:                #aed09b;
+  --color-on-secondary:             #1b3711;
+  --color-secondary-container:      #314e25;
+  --color-on-secondary-container:   #9dbf8b;
+  --color-secondary-fixed:          #caedb6;
+  --color-tertiary:                 #ffb4ab;
+  --color-on-tertiary:              #690005;
+  --color-tertiary-container:       #ff8a7e;
+  --color-on-tertiary-container:    #801211;
+  --color-error:                    #ffb4ab;
+  --color-on-error:                 #690005;
+  --color-error-container:          #93000a;
+  --color-on-error-container:       #ffdad6;
+  --color-primary-fixed:            #fcdfab;
+  --color-primary-fixed-dim:        #dfc391;
+  --color-on-primary-fixed:         #261900;
+  --color-on-primary-fixed-variant: #57441d;
+  --color-background:               #151310;
+  --color-on-background:            #e8e1db;
+  --color-surface-variant:          #373430;
+  /* Shadow color for emboss effect */
+  --shadow-emboss:                  rgba(10, 9, 8, 1);
+  --shadow-emboss-soft:             rgba(10, 9, 8, 0.7);
+  /* Headline 3D shadow layers - highly pronounced stacked effect */
+  --headline-shadow:
+    1px 1px 0px var(--color-primary-container),
+    2px 2px 0px var(--color-primary-container),
+    3px 3px 0px var(--color-on-primary-container),
+    4px 4px 0px var(--color-on-primary-container),
+    5px 5px 0px rgba(0, 0, 0, 0.9),
+    6px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ── LIGHT THEME — warm cream, warm ink ───────────────────────── */
+[data-theme="light"] {
+  --color-surface:                  #fdf8f2;
+  --color-surface-dim:              #ede8e2;
+  --color-surface-bright:           #ffffff;
+  --color-surface-container-lowest: #f7f2ec;
+  --color-surface-container-low:    #f0ebe4;
+  --color-surface-container:        #e8e3dc;
+  --color-surface-container-high:   #ddd8d1;
+  --color-surface-container-highest:#d0ccc5;
+  --color-on-surface:               #1c1a17;
+  --color-on-surface-variant:       #4a4540;
+  --color-inverse-surface:          #1c1a17;
+  --color-inverse-on-surface:       #f0ebe4;
+  --color-outline:                  #7a7167;
+  --color-outline-variant:          #c5bfb8;
+  --color-surface-tint:             #6b5120;
+  --color-primary:                  #5c4212;
+  --color-on-primary:               #ffffff;
+  --color-primary-container:        #e8d5a3;
+  --color-on-primary-container:     #3a2800;
+  --color-inverse-primary:          #dfc391;
+  --color-secondary:                #3a6b2a;
+  --color-on-secondary:             #ffffff;
+  --color-secondary-container:      #c8edb3;
+  --color-on-secondary-container:   #0d2105;
+  --color-secondary-fixed:          #aed09b;
+  --color-tertiary:                 #a63228;
+  --color-on-tertiary:              #ffffff;
+  --color-tertiary-container:       #ffd9d5;
+  --color-on-tertiary-container:    #400001;
+  --color-error:                    #ba1a1a;
+  --color-on-error:                 #ffffff;
+  --color-error-container:          #ffdad6;
+  --color-on-error-container:       #410002;
+  --color-primary-fixed:            #fce0a8;
+  --color-primary-fixed-dim:        #dfc391;
+  --color-on-primary-fixed:         #261900;
+  --color-on-primary-fixed-variant: #57441d;
+  --color-background:               #fdf8f2;
+  --color-on-background:            #1c1a17;
+  --color-surface-variant:          #d0ccc5;
+  --shadow-emboss:                  rgba(100, 90, 70, 0.4);
+  --shadow-emboss-soft:             rgba(100, 90, 70, 0.25);
+  --headline-shadow:
+    1px 1px 0px var(--color-primary-container),
+    2px 2px 0px var(--color-primary-container),
+    3px 3px 0px var(--color-on-primary-container),
+    4px 4px 0px var(--color-on-primary-container),
+    5px 5px 0px rgba(0, 0, 0, 0.2),
+    6px 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ── CRIMSON THEME — black and red high contrast (FIX 5) ────────────── */
+[data-theme="crimson"] {
+  --color-surface:                  #0a0505;
+  --color-surface-dim:              #0a0505;
+  --color-surface-bright:           #241515;
+  --color-surface-container-lowest: #050202;
+  --color-surface-container-low:    #140a0a;
+  --color-surface-container:        #1a0d0d;
+  --color-surface-container-high:   #241212;
+  --color-surface-container-highest:#331a1a;
+  --color-on-surface:               #f5d5d5;
+  --color-on-surface-variant:       #b38c8c;
+  --color-inverse-surface:          #f5d5d5;
+  --color-inverse-on-surface:       #241212;
+  --color-outline:                  #8c5959;
+  --color-outline-variant:          #4a2e2e;
+  --color-surface-tint:             #ff4d4d;
+  --color-primary:                  #ff4d4d;
+  --color-on-primary:               #330000;
+  --color-primary-container:        #b30000;
+  --color-on-primary-container:     #ffcccc;
+  --color-inverse-primary:          #990000;
+  --color-secondary:                #ffd6d6;
+  --color-on-secondary:             #4d1919;
+  --color-secondary-container:      #802020;
+  --color-on-secondary-container:   #ffeded;
+  --color-secondary-fixed:          #ffb3b3;
+  --color-tertiary:                 #ff9999;
+  --color-on-tertiary:              #4d0000;
+  --color-tertiary-container:       #990000;
+  --color-on-tertiary-container:    #ffcccc;
+  --color-error:                    #ffb4ab;
+  --color-on-error:                 #690005;
+  --color-error-container:          #93000a;
+  --color-on-error-container:       #ffdad6;
+  --color-primary-fixed:            #ffb3b3;
+  --color-primary-fixed-dim:        #ff4d4d;
+  --color-on-primary-fixed:         #330000;
+  --color-on-primary-fixed-variant: #660000;
+  --color-background:               #0a0505;
+  --color-on-background:            #f5d5d5;
+  --color-surface-variant:          #331a1a;
+  --shadow-emboss:                  rgba(5, 2, 2, 1);
+  --shadow-emboss-soft:             rgba(5, 2, 2, 0.7);
+  --headline-shadow:
+    1px 1px 0px var(--color-primary-container),
+    2px 2px 0px var(--color-primary-container),
+    3px 3px 0px var(--color-on-primary-container),
+    4px 4px 0px var(--color-on-primary-container),
+    5px 5px 0px rgba(0, 0, 0, 0.9),
+    6px 6px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   BASE LAYER
+════════════════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+    min-height: 100dvh;
+    /* Smooth color transitions when switching theme */
+    transition: background-color var(--transition-component), color var(--transition-component);
+  }
+
+  /* Safe area for iOS notch/home indicator */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Focus ring — consistent across all themes */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    transition: outline-color var(--transition-micro);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   COMPONENT LAYER
+════════════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* ── Tactical Card — 4px mechanical bottom-right offset ───── */
+  .tactical-card {
+    box-shadow: 4px 4px 0px 0px var(--shadow-emboss);
+    transition: transform var(--transition-micro), box-shadow var(--transition-micro),
+                background-color var(--transition-component), border-color var(--transition-component);
+  }
+  .tactical-card:active:not([disabled]) {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px 0px var(--shadow-emboss);
+  }
+
+  /* ── Interactive Card — lift on hover ─── */
+  .interactive-card {
+    box-shadow: 4px 4px 0px 0px var(--shadow-emboss);
+    transition: transform var(--transition-micro), box-shadow var(--transition-micro),
+                background-color var(--transition-micro);
+    cursor: pointer;
+  }
+  .interactive-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--shadow-emboss);
+    background-color: var(--color-surface-container);
+  }
+  .interactive-card:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px 0px var(--shadow-emboss);
+  }
+
+  /* ── Chip Offset — 2px for small status chips ───────────── */
+  .tactical-chip-offset {
+    box-shadow: 2px 2px 0px 0px var(--shadow-emboss);
+  }
+
+  /* ── Tactical Input — inset/pressed, carved-in look ──────── */
+  .tactical-input {
+    box-shadow: inset 3px 3px 0px 0px rgba(0, 0, 0, 0.4);
+    transition: border-color var(--transition-micro), box-shadow var(--transition-micro);
+  }
+  /* FIX C: Consistent focus state across all themes */
+  .tactical-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: inset 3px 3px 0px 0px rgba(0, 0, 0, 0.4),
+                0 0 0 1px var(--color-primary);
+    outline: none;
+  }
+
+  /* ── Ambient Shadow ─────────────────────────────────────── */
+  .ambient-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ── Label Caps — always uppercase mono ─────────────────── */
+  .label-caps {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── 3D Extruded Headline Text ───────────────────────────── */
+  /* Each theme has its own shadow layers via CSS variable */
+  .headline-3d {
+    text-shadow: var(--headline-shadow);
+    transition: text-shadow var(--transition-component);
+  }
+
+  /* ── Scrollbar Styling (Hidden Globally) ────────────────── */
+  * {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important;  /* IE/Edge */
+  }
+  ::-webkit-scrollbar {
+    display: none !important; /* Safari, Chrome, Opera */
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* ── Status Chips ──────────────────────────────────────── */
+  .chip-verified {
+    @apply font-mono text-[10px] px-2 py-1 border;
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
+    border-color: var(--color-secondary-fixed);
+    box-shadow: 2px 2px 0px 0px var(--shadow-emboss);
+  }
+  .chip-alert {
+    @apply font-mono text-[10px] px-2 py-1 border;
+    background-color: var(--color-error-container);
+    color: var(--color-on-error-container);
+    border-color: var(--color-error);
+    box-shadow: 2px 2px 0px 0px var(--shadow-emboss);
+  }
+  .chip-category {
+    @apply font-mono text-[10px] px-2 py-1 border;
+    background-color: var(--color-surface);
+    color: var(--color-outline);
+    border-color: var(--color-surface-container-highest);
+    box-shadow: 2px 2px 0px 0px var(--shadow-emboss);
+  }
+
+  /* ── Primary Button ─────────────────────────────────────── */
+  .btn-primary {
+    @apply font-mono text-[12px] font-medium tracking-[1.5px] uppercase px-md py-sm border inline-flex items-center gap-xs;
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    border-color: var(--color-outline-variant);
+    box-shadow: 3px 3px 0px 0px var(--shadow-emboss);
+    transition: transform var(--transition-micro), box-shadow var(--transition-micro),
+                background-color var(--transition-micro), color var(--transition-micro);
+  }
+  .btn-primary:hover:not([disabled]) {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 0px var(--shadow-emboss);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+  .btn-primary:active:not([disabled]) {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px var(--shadow-emboss);
+  }
+
+  /* ── Ghost Button ────────────────────────────────────────── */
+  .btn-ghost {
+    @apply font-mono text-[12px] font-medium tracking-[1.5px] uppercase px-md py-sm border inline-flex items-center gap-xs;
+    background: transparent;
+    color: var(--color-on-surface-variant);
+    border-color: var(--color-outline-variant);
+    transition: background var(--transition-micro), color var(--transition-micro),
+                transform var(--transition-micro), box-shadow var(--transition-micro);
+  }
+  .btn-ghost:hover:not([disabled]) {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
+  /* FIX C: Ghost button now also has pressed state */
+  .btn-ghost:active:not([disabled]) {
+    transform: translate(2px, 2px);
+    background-color: var(--color-surface-container-highest);
+  }
+
+  /* ── Locked / Empty State ───────────────────────────────── */
+  .locked-state {
+    @apply border-2 border-dashed p-lg text-center;
+    background-color: var(--color-surface-container-low);
+    border-color: var(--color-outline-variant);
+  }
+
+  /* ── Typing indicator dots ──────────────────────────────── */
+  .typing-dot {
+    @apply w-2 h-2 rounded-full;
+    background-color: var(--color-primary);
+    animation: typingBounce 1.2s ease-in-out infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-6px); opacity: 1; }
+  }
+
+  /* ── Mic Pulse — voice input active state ──────────────── */
+  .mic-listening {
+    color: var(--color-error) !important;
+    animation: micPulse 1s ease-in-out infinite;
+  }
+  @keyframes micPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.25); opacity: 0.65; }
+  }
+
+  /* ── Voice Playing indicator ───────────────────────────── */
+  .voice-playing {
+    color: var(--color-primary) !important;
+    animation: voicePulse 1.5s ease-in-out infinite;
+  }
+  @keyframes voicePulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+  }
+
+  /* ── Settings toggle ────────────────────────────────────── */
+  .settings-toggle {
+    @apply relative border transition-colors;
+    width: 3.5rem; height: 1.75rem;
+    border-color: var(--color-outline-variant);
+  }
+  .settings-toggle-thumb {
+    @apply absolute top-[3px] w-5 h-5 border transition-all;
+    border-color: var(--color-outline-variant);
+  }
+  .settings-toggle-thumb.on {
+    background-color: var(--color-primary);
+    left: calc(100% - 23px);
+  }
+  .settings-toggle-thumb.off {
+    background-color: var(--color-outline);
+    left: 3px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   UTILITIES
+════════════════════════════════════════════════════════════════ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Snappy nav transition */
+  .nav-transition {
+    transition: background-color var(--transition-micro), color var(--transition-micro), transform var(--transition-micro);
+  }
+  
+  /* Page Transition utility */
+  .page-enter {
+    animation: pageEnter var(--transition-page);
+  }
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Skeleton Loading utility */
+  .skeleton-pulse {
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+    background: linear-gradient(90deg, var(--color-surface-container-low) 0%, var(--color-surface-container) 50%, var(--color-surface-container-low) 100%);
+    background-size: 200% 100%;
+  }
+  @keyframes skeletonPulse {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
