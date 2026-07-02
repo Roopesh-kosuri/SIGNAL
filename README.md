@@ -4,7 +4,9 @@ SIGNAL is a full-stack open-source intelligence (OSINT) workstation designed to 
 
 ---
 Here is the SIGNAL website with deployed version (test and in beta) 
+
 https://roopesh-kosuri.github.io/signal-website/
+
 ---
 ## 💡 The Core Philosophy: True BYOK Architecture
 
