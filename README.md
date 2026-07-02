@@ -1,4 +1,4 @@
-# 🛰️ SIGNAL // Privacy-First Intelligence Engine & Autonomous Fact-Checking Agent
+# 🛰️ SIGNAL - Privacy-First Intelligence Engine & Autonomous Fact-Checking Agent
 
 > **Tactical OSINT curation and multi-model AI analysis workstation, driven by a strict zero-cost stateless architecture.**
 
