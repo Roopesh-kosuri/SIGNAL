@@ -62,4 +62,5 @@ Follow these precise execution parameters to initialize your personal instance o
 📥 1. Clone the Architecture Root
 ```bash
 git clone [https://github.com/Roopesh-kosuri/SIGNAL.git](https://github.com/Roopesh-kosuri/SIGNAL.git)
+pip install -r requirements.txt
 cd SIGNAL
