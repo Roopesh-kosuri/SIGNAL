@@ -64,3 +64,4 @@ Follow these precise execution parameters to initialize your personal instance o
 git clone [https://github.com/Roopesh-kosuri/SIGNAL.git](https://github.com/Roopesh-kosuri/SIGNAL.git)
 pip install -r requirements.txt
 cd SIGNAL
+npm run dev
