@@ -3,7 +3,9 @@
 SIGNAL is a full-stack open-source intelligence (OSINT) workstation designed to aggregate global news and analyze geopolitical and technological events without algorithmic bias. It features a stateless architecture, asynchronous multi-provider news fetching, a real-time 3D satellite tracking dashboard, and an autonomous, streaming fact-checking agent loop.
 
 ---
-
+Here is the SIGNAL website with deployed version (test and in beta) 
+https://roopesh-kosuri.github.io/signal-website/
+---
 ## 💡 The Core Philosophy: True BYOK Architecture
 
 Most modern AI tools run on a SaaS subscription model or require data-logging middleware. SIGNAL sidesteps this entirely by using a strict **Bring Your Own Key (BYOK)** setup.
