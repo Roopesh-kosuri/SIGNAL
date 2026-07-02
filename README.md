@@ -48,48 +48,129 @@ The interface uses a bespoke CSS configuration integrated into a clean, minimali
 
 ## 🔧 Local Installation & Setup
 
-Ensure you have **Node.js (v18+)** and **Python (v3.10+)** initialized on your system.
+Before you begin, make sure you have the following installed:
 
-### 1. Clone the Project
+- **Node.js** v18 or later
+- **Python** v3.10 or later
+
+---
+
+## 1. Clone the Repository
+
 ```bash
-git clone [https://github.com/Roopesh-kosuri/SIGNAL.git](https://github.com/Roopesh-kosuri/SIGNAL.git)
+git clone https://github.com/Roopesh-kosuri/SIGNAL.git
 cd SIGNAL
-2. Backend Environment Setup
-Bash
+```
+
+---
+
+## 2. Backend Setup
+
+Navigate to the backend directory:
+
+```bash
 cd backend
+```
 
-# Create and activate a virtual environment
+### Create a Virtual Environment
+
+**Windows**
+
+```bash
 python -m venv venv
-
-# On Windows:
 .\venv\Scripts\activate
+```
 
-# On Mac/Linux:
+**macOS / Linux**
+
+```bash
+python3 -m venv venv
 source venv/bin/activate
+```
 
-# Install requirements and start the application server
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### Start the Backend Server
+
+```bash
 python -m uvicorn main:app --reload --port 8000
-The backend API will run live at: http://localhost:8000
+```
 
-3. Frontend App Compilation & Launch
-Open a second terminal window and execute:
+The backend API will be available at:
 
-Bash
+```
+http://localhost:8000
+```
+
+---
+
+## 3. Frontend Setup
+
+Open a **new terminal**, then run:
+
+```bash
 cd frontend
+```
 
-# Install client packages
+### Install Dependencies
+
+```bash
 npm install
+```
 
-# Start the application interface
+### Start the Development Server
+
+```bash
 npm run dev
-The interface client is now active at: http://localhost:5173
+```
 
-⚙️ Initial Configuration
-Once the workstation launches, you can immediately access the workspace via the Demo Mode Gateway node. Head directly to the [SETTINGS] section to mount your processing infrastructure:
+The frontend will be available at:
 
-API Setup: Input your personal workspace tokens for Gemini, Groq, Claude, or OpenAI.
+```
+http://localhost:5173
+```
 
-Search Grounding: Activating your Gemini core turns on real-time Google Search grounding parameters automatically across verification layers.
+---
 
-Orbital Uplink: Paste a free personal Cesium ION token to activate the rendering matrix inside the 3D Satellite Globe interface.
+# ⚙️ Initial Configuration
+
+Once both servers are running, launch the application and enter **Demo Mode** to access the workspace.
+
+Navigate to **Settings** and configure the following services:
+
+### 🔑 AI Provider API Keys
+
+Add the API keys for any providers you want to use:
+
+- Gemini
+- OpenAI
+- Claude
+- Groq
+
+---
+
+### 🌐 Search Grounding
+
+Enable **Gemini** by adding your Gemini API key.
+
+This automatically enables **Google Search Grounding** for real-time web verification throughout the application.
+
+---
+
+### 🛰️ Orbital Uplink (Optional)
+
+To enable the interactive **3D Satellite Globe**, add a free **Cesium ION Access Token** in the Settings page.
+
+You can create one here:
+
+https://ion.cesium.com/
+
+---
+
+## ✅ You're Ready
+
+After completing the setup, SIGNAL is ready to use with AI models, real-time search grounding, and the optional 3D satellite visualization.
