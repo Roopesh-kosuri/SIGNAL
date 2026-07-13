@@ -130,3 +130,5 @@ app.include_router(orbital_router, prefix="/api")
 @app.get("/")
 async def root():
     return {"service": "SIGNAL Intelligence API", "status": "operational", "version": "1.1.0"}
+#Copyright (c) 2026 Roopesh Kosuri
+#Licensed under CC BY-NC-SA 4.0
